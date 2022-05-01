@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Weapon.hpp                                         :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 15:42:09 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/01 23:55:03 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/02 01:05:28 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/02 01:09:12 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WEAPON_HPP
-# define WEAPON_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 # include <string>
 
 using namespace std;
 
-class Weapon
-{
+class Harl {
+
 private:
 
-	string	type;
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
 
 public:
 
-	Weapon(string type);
-	~Weapon(void);
-
-	string	getType(void);
-	void	setType(string type);
+	void complain(string level);
 };
 
 #endif

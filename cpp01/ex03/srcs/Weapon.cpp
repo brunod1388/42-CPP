@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:49:43 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/01 15:51:23 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/01 23:55:51 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Weapon::Weapon(string type)
 {
 	this->type = type;
+}
+
+Weapon::~Weapon(void)
+{
+	return ;
 }
 
 string	Weapon::getType(void)
