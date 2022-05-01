@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:42:07 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/01 16:09:57 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/01 23:36:41 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,18 @@
 using namespace std;
 
 class HumanA {
-	
+
 private:
 
 	string	name;
-	Weapon	weapon;
+	Weapon	*weapon;
 
 public:
 
-	HumanA(string name, Weapon w);
+	HumanA(string name, Weapon &w);
+	~HumanA(void);
 
 	void	attack(void);
-	void	setWeapon(Weapon w);
-	void	getWeapon(void);
 
 };
 
