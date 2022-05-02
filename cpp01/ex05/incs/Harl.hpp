@@ -6,15 +6,13 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/02 01:05:28 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/02 01:09:12 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/03 00:20:10 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HARL_HPP
 # define HARL_HPP
 # include <string>
-
-using namespace std;
 
 class Harl {
 
@@ -27,7 +25,7 @@ private:
 
 public:
 
-	void complain(string level);
+	void complain(std::string level);
 };
 
 #endif

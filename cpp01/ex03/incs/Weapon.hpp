@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:42:09 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/01 23:55:03 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/03 00:17:13 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,19 @@
 # define WEAPON_HPP
 # include <string>
 
-using namespace std;
-
 class Weapon
 {
 private:
 
-	string	type;
+	std::string	type;
 
 public:
 
-	Weapon(string type);
+	Weapon(std::string type);
 	~Weapon(void);
 
-	string	getType(void);
-	void	setType(string type);
+	std::string	getType(void);
+	void		setType(std::string type);
 };
 
 #endif

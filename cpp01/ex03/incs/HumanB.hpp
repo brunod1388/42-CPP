@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 15:42:07 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/01 23:30:37 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/03 00:16:48 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,16 @@
 # include <string>
 # include "Weapon.hpp"
 
-using namespace std;
-
 class HumanB {
 	
 private:
 
-	string	name;
+	std::string	name;
 	Weapon	*weapon;
 
 public:
 
-	HumanB(string name);
+	HumanB(std::string name);
 
 	void	attack(void);
 	void	setWeapon(Weapon &w);

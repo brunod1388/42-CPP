@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:16:09 by bgoncalv          #+#    #+#             */
-/*   Updated: 2022/04/29 22:11:07 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/02 22:06:42 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 #define PHONEBOOK_HPP
 #include "Contact.hpp"
 #define MAX_CONTACT 3
-
-using namespace std;
 
 class PhoneBook {
 

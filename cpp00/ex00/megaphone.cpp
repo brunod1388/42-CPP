@@ -3,31 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgoncalv <bgoncalv@student.42lausanne.ch>  +#+  +:+       +#+        */
+/*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/15 23:31:08 by bgoncalv          #+#    #+#             */
-/*   Updated: 2022/03/16 00:31:55 by bgoncalv         ###   ########.fr       */
+/*   Updated: 2022/05/02 22:05:38 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-using namespace std;
+#include <string>
 
 int main(int argc, char **argv)
 {
 	if (argc == 1)
 	{
-		cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << endl;
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
 		return 0;
 	}
-	while (--argc)
+	for (int i = 1; i < argc; i++)
 	{
-		argv++;
-		for(size_t i = 0; i < strlen(*argv); i++)
-			(*argv)[i] = toupper((*argv)[i]);
-		cout << *argv;
+		std::string s(argv[i]);
+
+		std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+		std::cout << s << " ";
 	}
-	cout << endl;
+	
+	std::cout << std::endl;
 	return 0;
 }

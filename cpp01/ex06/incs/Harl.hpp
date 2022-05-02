@@ -1,18 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 03:28:14 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/03 00:01:26 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/02 01:05:28 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/02 01:09:12 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HARL_HPP
+# define HARL_HPP
+# include <string>
 
-Zombie *newZombie(std::string name)
-{
-	return new Zombie(name);
-}
+using namespace std;
+
+class Harl {
+
+private:
+
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+
+public:
+
+	void complain(string level);
+};
+
+#endif
