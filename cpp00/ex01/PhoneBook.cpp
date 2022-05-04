@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:29:37 by bgoncalv          #+#    #+#             */
-/*   Updated: 2022/05/02 22:57:01 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/04 14:12:55 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,12 @@ void	PhoneBook::search_contact(void)
 	display_contacts();
 	std::cout << "Enter desired contact : ";
 	std::cin >> i;
-	std::cin.ignore(1000, '\n');
-	if (i < 0 || this->nb_contact <= i)
+	if (std::cin.fail() || i < 0 || this->nb_contact <= i)
+	{
+		std::cin.clear();
+		std::cin.ignore(1000, '\n');
 		std::cout << "Contact id must be 0 to " << this->nb_contact - 1 << std::endl;
+	}
 	else
 		display_info(i);
 }
