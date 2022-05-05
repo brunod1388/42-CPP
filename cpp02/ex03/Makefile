@@ -6,35 +6,58 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/04 22:00:08 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/05 01:46:02 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror -std=c++98
+S		= srcs/
+O		= objs/
+I		= incs/
+D		= deps/
 
-INCLUDES	=	Fixed.hpp
+NAME	= bsp
 
-NAME		=	fix
+SRCS	= main.cpp Fixed.cpp Point.cpp bsp.cpp
 
-SRCS		=	main.cpp Fixed.cpp
+CC		= clang++
 
-OBJS = $(SRCS:.cpp=.o)
+CFLAGS	+= -Wall -Wextra -Werror -std=c++98
 
-$(NAME):	$(OBJS)
-			$(CC) $(CFLAGS) $(OBJS) -o $(NAME) 
+CFLAGS	+= -I$I
+SRCS	:= $(foreach file,$(SRCS),$S$(file))
+OBJS	= $(SRCS:$S%=$O%.o)
+DEPS	= $(SRCS:$S%=$D%.d)
+RM		= /bin/rm -rf
 
-all:		$(NAME)
+.PHONY: all clean fclean re test
+
+all: $(NAME)
+$O:
+		@mkdir $@
+
+$(OBJS): | $O
+
+$(OBJS): $O%.o: $S%
+		@echo "Compiling $^: "
+		@$(CC) $(CFLAGS) -c $< -o $@
+		@echo "✓"
+
+$D:
+		@mkdir $@
+
+$(NAME): $(OBJS)
+		@echo "Assembling $(NAME)"
+		@$(CC) $(LDFLAGS) $^ -o $@
 
 clean:
-			rm -rf *.o
+		@echo "Cleaning up..."
+		@$(RM) $D $O
 
-fclean:		clean
-			rm -f $(NAME)
-			
-re:			clean all
+fclean: clean
+		@echo "Everything!"
+		@$(RM) $(NAME)
 
-test:		re
-			./$(NAME)
+re: fclean all
 
-.PHONY:		all clean fclean re
+test: $(NAME)
+	./$(NAME)
