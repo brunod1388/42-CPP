@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 01:42:59 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/05 03:05:30 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/05 18:28:49 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class Point {
 
 private:
-	Fixed _x;
-	Fixed _y;
+	const Fixed _x;
+	const Fixed _y;
 
 public:
 	Point(void);

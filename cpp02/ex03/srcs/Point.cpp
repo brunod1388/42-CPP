@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 01:43:01 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/05 03:10:31 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/05 23:51:25 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,19 @@
 #include "Fixed.hpp"
 #include <iomanip>
 
-Point::Point(void)
+Point::Point(void): _x(0), _y(0)
 {
-	Fixed f(0.0f);
-
-	this->_x = Fixed(0);
-	this->_y = Fixed(0);
+	return;
 }
 
-Point::Point(const Point &src)
+Point::Point(const Point &src): _x(src._x.toFloat()), _y(src._y.toFloat())
 {
-	*this = src;
+	return;
 }
 
-Point::Point(const float x, const float y)
+Point::Point(const float x, const float y): _x(x), _y(y)
 {
-	this->_x = Fixed(x);
-	this->_y = Fixed(y);
+	return;
 }
 
 Point::~Point(void)
@@ -40,8 +36,8 @@ Point::~Point(void)
 
 Point & Point::operator= (const Point &rhs)
 {
-	this->_x = rhs._x;
-	this->_y = rhs._y;
+	this->getX().setRawBits(rhs._x.getRawBits());
+	this->getY().setRawBits(rhs._y.getRawBits());
 	return *this;
 }
 
@@ -57,16 +53,16 @@ Fixed	Point::getY(void) const
 
 void	Point::setX(const float x)
 {
-	this->_x = Fixed(x);
+	this->getX().setRawBits(Fixed(x).getRawBits());
 }
 
 void	Point::setY(const float y)
 {
-	this->_y = Fixed(y);
+	this->getY().setRawBits(Fixed(y).getRawBits());
 }
 
 std::ostream & operator<<(std::ostream &os, const Point &rhs)
 {
-	os << "(" << std::setprecision(2) << rhs.getX() << ", " << rhs.getY() << ")";
+	os << "(" << std::setprecision(3) << rhs.getX() << ", " << rhs.getY() << ")";
 	return os;
 }
