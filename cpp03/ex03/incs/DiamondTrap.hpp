@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:50:03 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef DIAMONDTRAP_HPP
+# define DIAMONDTRAP_HPP
 #include <string>
 #include <iostream>
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class DiamondTrap : public FragTrap, public ScavTrap{
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	DiamondTrap(void);
+	DiamondTrap(std::string name);
+	DiamondTrap(const DiamondTrap &src);
+	~DiamondTrap(void);
 
 	// ClapTrap & operator=(const ClapTrap &src);
+	bool		getKeeperMode(void) const;
 
 	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	void		guardGate();
 };
 
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
+std::ostream & operator<<(std::ostream &os, const DiamondTrap &rhs);
 
 #endif

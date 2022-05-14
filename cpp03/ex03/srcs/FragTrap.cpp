@@ -3,29 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgoncalv <bgoncalv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/12 15:42:25 by bgoncalv         ###   ########.fr       */
+/*   Updated: 2022/05/15 00:38:18 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void): ClapTrap("Default FragTrap", 100, 100, 30)
+FragTrap::FragTrap(void):
+	ClapTrap("Default FragTrap", 100, 100, 30)
 {
 	std::cout << "Default FragTrap Constructor called" << std::endl;
 
 	return;
 }
 
-FragTrap::FragTrap(std::string name): ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap(std::string name):
+	ClapTrap(name, 100, 100, 30)
 {
 	std::cout << "FragTrap Constructor called : " << name << "created" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(const ClapTrap &src) : ClapTrap(src.getName(), src.getHP(), src.getEnergy(), src.getAttDmg())
+FragTrap::FragTrap(const ClapTrap &src):
+	ClapTrap(src.getName(), src.getHP(), src.getEnergy(), src.getHP())
 {
 	std::cout << "Copy FragTrap Constructor Called" << std::endl;
 
@@ -53,7 +56,7 @@ void		FragTrap::attack(const std::string& target)
 
 void	FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap highfives guys" << std::endl;
+	std::cout << this->getName() << " highfives guys" << std::endl;
 }
 
 std::ostream & operator<<(std::ostream &os, const FragTrap &rhs)

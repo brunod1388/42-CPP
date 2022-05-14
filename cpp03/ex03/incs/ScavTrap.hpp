@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:35:36 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 #include <string>
 #include <iostream>
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class ScavTrap : public ClapTrap {
 
+protected:
+	bool		_keeperMode;
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	ScavTrap(void);
+	ScavTrap(std::string name);
+	ScavTrap(const ClapTrap &src);
+	~ScavTrap(void);
 
 	// ClapTrap & operator=(const ClapTrap &src);
+	bool		getKeeperMode(void) const;
 
 	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	void		guardGate();
 };
 
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
+std::ostream & operator<<(std::ostream &os, const ScavTrap &rhs);
 
 #endif

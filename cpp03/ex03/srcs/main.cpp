@@ -3,49 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgoncalv <bgoncalv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/12 15:39:41 by bgoncalv         ###   ########.fr       */
+/*   Updated: 2022/05/15 00:48:45 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main(void)
 {
-	FragTrap default_sp = FragTrap();
-	FragTrap fragKikou("fragKikou");
-	FragTrap sp_copy(fragKikou);
+	DiamondTrap default_sp = DiamondTrap();
+	DiamondTrap diamondKikou("diamondKikou");
+	DiamondTrap sp_copy(diamondKikou);
 
-	fragKikou.attack("sa mere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("son pere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("son frere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.takeDamage(7);
-	fragKikou.highFivesGuys();
-	std::cout << fragKikou << std::endl;
-	fragKikou.beRepaired(3);
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("sa mere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("son pere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("son frere");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
-	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
-	fragKikou.takeDamage(10);
-	fragKikou.takeDamage(10);
+	diamondKikou.attack("sa mere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("son pere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("son frere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.takeDamage(7);
+	diamondKikou.highFivesGuys();
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.beRepaired(3);
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("sa mere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("son pere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("son frere");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("Tout le monde");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("Tout le monde");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("Tout le monde");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.attack("Tout le monde");
+	std::cout << diamondKikou << std::endl;
+	diamondKikou.takeDamage(10);
+	diamondKikou.takeDamage(10);
 
 	return 0;
 }

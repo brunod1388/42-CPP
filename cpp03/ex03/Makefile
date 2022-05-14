@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bgoncalv <bgoncalv@student.42.fr>          +#+  +:+       +#+         #
+#    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/12 15:39:59 by bgoncalv         ###   ########.fr        #
+#    Updated: 2022/05/14 04:46:49 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ I		= incs/
 
 NAME	= trap
 
-SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp
+SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp ScavTrap.cpp DiamondTrap.cpp
 
 CC		= clang++
 

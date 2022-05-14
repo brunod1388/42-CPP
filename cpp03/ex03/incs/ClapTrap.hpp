@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bgoncalv <bgoncalv@student.42.fr>          +#+  +:+       +#+        */
+/*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/12 15:31:58 by bgoncalv         ###   ########.fr       */
+/*   Updated: 2022/05/15 00:38:37 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ protected:
 public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
+	ClapTrap(std::string name, int hp, int ep, int att);
 	ClapTrap(const ClapTrap &src);
-	ClapTrap(std::string name, int hp, int ep, int dmg);
 	~ClapTrap(void);
 
 	ClapTrap & operator=(const ClapTrap &src);
