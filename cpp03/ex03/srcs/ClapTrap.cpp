@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:37:08 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 18:54:15 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ ClapTrap::~ClapTrap(void)
 
 	return;
 }
-
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 {

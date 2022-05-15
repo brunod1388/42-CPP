@@ -12,27 +12,54 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(void):
-_name("Default DiamondTrap"), _hitPoint(100), _EnergyPoint(50), _attackDamage(20), _keeperMode(false)
+DiamondTrap::DiamondTrap(void)
 {
+	ClapTrap::_name = "Default_diamond_clap_name";
+	this->_name = "Default_Diamond";
+	this->_hitPoint = FragTrap::_hitPoint;
+	this->_EnergyPoint = ScavTrap::_EnergyPoint;
+	this->_attackDamage = FragTrap::_attackDamage;
+	this->_keeperMode = false;
 	std::cout << "Default DiamondTrap Constructor called" << std::endl;
-
 	return;
 }
 
-DiamondTrap::DiamondTrap(std::string name):
-_name(name), _hitPoint(100), _EnergyPoint(50), _attackDamage(20), _keeperMode(false)
+DiamondTrap::DiamondTrap(std::string name)
 {
+	ClapTrap::_name = name + "clap_name";
+	this->_name = name;
+	this->_hitPoint = FragTrap::_hitPoint;
+	this->_EnergyPoint = ScavTrap::_EnergyPoint;
+	this->_attackDamage = FragTrap::_attackDamage;
+	this->_keeperMode = false;
 	std::cout << "DiamondTrap Constructor called : " << name << "created" << std::endl;
 	return;
 }
 
-DiamondTrap::DiamondTrap(const ClapTrap &src):
-_name(src.getName()), _hitPoint(src.getHP()), _EnergyPoint(src.getEnergy()), _attackDamage(src.getAttDmg()), _keeperMode(false)
+DiamondTrap::DiamondTrap(const DiamondTrap &src)
 {
+	ClapTrap::_name = src.getName() + "_clap_name";
+	this->_name = src.getName();
+	this->_hitPoint = src.getHP();
+	this->_EnergyPoint = src.getEnergy();
+	this->_attackDamage = src.getAttDmg();
+	this->_keeperMode = src.getKeeperMode();
 	std::cout << "Copy DiamondTrap Constructor Called" << std::endl;
 
 	return;
+}
+
+DiamondTrap & DiamondTrap::operator=(const DiamondTrap &src)
+{
+	ClapTrap::_name = src.getName() + "_clap_name";
+	this->_name = src.getName();
+	this->_hitPoint = src.getHP();
+	this->_EnergyPoint = src.getEnergy();
+	this->_attackDamage = src.getAttDmg();
+	this->_keeperMode = src.getKeeperMode();
+	std::cout << "DiamondTrap Assignation operator Called" << std::endl;
+
+	return *this;
 }
 
 DiamondTrap::~DiamondTrap(void)
@@ -49,21 +76,7 @@ bool	DiamondTrap::getKeeperMode(void) const
 
 void		DiamondTrap::attack(const std::string& target)
 {
-	this->_keeperMode = false;
-	if (this->_EnergyPoint && this->_hitPoint)
-	{
-		std::cout << "DiamondTrap "<< this->_name << " attacks " << target;
-		std::cout << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
-		this->_EnergyPoint--;
-	}
-	else
-		std::cout << "ClapTrap "<< this->_name << " has no Energy left" << std::endl;
-}
-
-void	DiamondTrap::guardGate()
-{
-	this->_keeperMode = true;
-	std::cout << "DiamondTrap is now on keeper mode" << std::endl;
+	ScavTrap::attack(target);
 }
 
 std::ostream & operator<<(std::ostream &os, const DiamondTrap &rhs)

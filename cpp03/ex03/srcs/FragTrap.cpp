@@ -6,33 +6,61 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:38:18 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 00:00:29 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap(void):
-	ClapTrap("Default FragTrap", 100, 100, 30)
+FragTrap::FragTrap(void)
 {
+	this->_name = "Default FragTrap";
+	this->_hitPoint = 100;
+	this->_EnergyPoint = 100;
+	this->_attackDamage = 30;
 	std::cout << "Default FragTrap Constructor called" << std::endl;
-
 	return;
 }
 
-FragTrap::FragTrap(std::string name):
-	ClapTrap(name, 100, 100, 30)
+FragTrap::FragTrap(std::string name)
 {
+	this->_name = name;
+	this->_hitPoint = 100;
+	this->_EnergyPoint = 100;
+	this->_attackDamage = 30;
 	std::cout << "FragTrap Constructor called : " << name << "created" << std::endl;
 	return;
 }
 
-FragTrap::FragTrap(const ClapTrap &src):
-	ClapTrap(src.getName(), src.getHP(), src.getEnergy(), src.getHP())
+FragTrap::FragTrap(std::string name, int hp, int ep, int att)
 {
+	this->_name = name;
+	this->_hitPoint = hp;
+	this->_EnergyPoint = ep;
+	this->_attackDamage = att;
+	std::cout << "Constructor called : " << name << "created" << std::endl;
+	return;
+}
+
+FragTrap::FragTrap(const ClapTrap &src)
+{
+	this->_name = src.getName();
+	this->_hitPoint = src.getHP();
+	this->_EnergyPoint = src.getEnergy();
+	this->_attackDamage = src.getAttDmg();
 	std::cout << "Copy FragTrap Constructor Called" << std::endl;
 
 	return;
+}
+
+FragTrap & FragTrap::operator=(const FragTrap &src)
+{
+	this->_name = src._name;
+	this->_hitPoint = src._hitPoint;
+	this->_EnergyPoint = src._EnergyPoint;
+	this->_attackDamage = src._attackDamage;
+
+	return *this;
 }
 
 FragTrap::~FragTrap(void)
@@ -51,7 +79,7 @@ void		FragTrap::attack(const std::string& target)
 		this->_EnergyPoint--;
 	}
 	else
-		std::cout << "ClapTrap "<< this->_name << " has no Energy left" << std::endl;
+		std::cout << "FragTrap "<< this->_name << " has no Energy left" << std::endl;
 }
 
 void	FragTrap::highFivesGuys(void)

@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:50:03 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 18:33:52 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ public:
 	DiamondTrap(const DiamondTrap &src);
 	~DiamondTrap(void);
 
-	// ClapTrap & operator=(const ClapTrap &src);
-	bool		getKeeperMode(void) const;
+	DiamondTrap & operator=(const DiamondTrap &src);
+	bool	getKeeperMode(void) const;
 
-	void		attack(const std::string& target);
-	void		guardGate();
+	void	attack(const std::string& target);
+	void	whoAmI(void);
 };
 
 std::ostream & operator<<(std::ostream &os, const DiamondTrap &rhs);

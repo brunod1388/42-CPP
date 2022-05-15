@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:48:45 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 00:07:25 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ int main(void)
 	std::cout << diamondKikou << std::endl;
 	diamondKikou.takeDamage(10);
 	diamondKikou.takeDamage(10);
+
+	FragTrap frag("test", 666, 666, 666);
+	std::cout << frag << std::endl;
+
 
 	return 0;
 }
