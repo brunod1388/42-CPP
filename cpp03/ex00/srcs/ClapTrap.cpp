@@ -6,32 +6,39 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/06 01:09:43 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:11:33 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void):
-_name("Default clapTrap"), _hitPoint(10), _EnergyPoint(10), _attackDamage(0)
+	_name("Default clapTrap"),
+	_hitPoint(10),
+	_EnergyPoint(10),
+	_attackDamage(0)
 {
 	std::cout << "Default Constructor called" << std::endl;
-
 	return;
 }
 
 ClapTrap::ClapTrap(std::string name):
-_name(name), _hitPoint(10), _EnergyPoint(10), _attackDamage(0)
+	_name(name),
+	_hitPoint(10),
+	_EnergyPoint(10),
+	_attackDamage(0)
 {
-	std::cout << "Constructor called : " << name << "created" << std::endl;
+	std::cout << "Constructor called : " << name << " created" << std::endl;
 	return;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src):
-_name(src._name), _hitPoint(src._hitPoint), _EnergyPoint(src._EnergyPoint), _attackDamage(src._attackDamage)
+	_name(src._name),
+	_hitPoint(src._hitPoint),
+	_EnergyPoint(src._EnergyPoint),
+	_attackDamage(src._attackDamage)
 {
 	std::cout << "Copy Constructor Called" << std::endl;
-
 	return;
 }
 

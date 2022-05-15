@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/06 01:11:51 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:12:50 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,16 @@ int main(void)
 	kikou.attack("sa mere");
 	std::cout << kikou << std::endl;
 	kikou.attack("son pere");
-	std::cout << kikou << std::endl;
 	kikou.attack("son frere");
-	std::cout << kikou << std::endl;
 	kikou.takeDamage(7);
 	std::cout << kikou << std::endl;
 	kikou.beRepaired(3);
 	std::cout << kikou << std::endl;
 	kikou.attack("sa mere");
-	std::cout << kikou << std::endl;
 	kikou.attack("son pere");
-	std::cout << kikou << std::endl;
 	kikou.attack("son frere");
-	std::cout << kikou << std::endl;
 	kikou.attack("Tout le monde");
-	std::cout << kikou << std::endl;
-	kikou.attack("Tout le monde");
+	kikou.attack("encore tout le monde");
 	std::cout << kikou << std::endl;
 	kikou.attack("Tout le monde");
 	std::cout << kikou << std::endl;
