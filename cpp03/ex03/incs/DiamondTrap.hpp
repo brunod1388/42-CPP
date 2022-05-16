@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 18:33:52 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 13:55:02 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 
 class DiamondTrap : public FragTrap, public ScavTrap{
 
+private:
+	std::string	_name;
+	
 public:
 	DiamondTrap(void);
 	DiamondTrap(std::string name);
