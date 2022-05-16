@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:11:33 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 18:55:30 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,22 @@ ClapTrap::ClapTrap(const ClapTrap &src):
 	return;
 }
 
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int att):
+	_name(name),
+	_hitPoint(hp),
+	_EnergyPoint(ep),
+	_attackDamage(att)
+{
+	std::cout << "Constructor called : " << name << "created" << std::endl;
+	return;
+}
+
 ClapTrap::~ClapTrap(void)
 {
 	std::cout << "ClapTrap has been destroyed" << std::endl;
 
 	return;
 }
-
 
 ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 {

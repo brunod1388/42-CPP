@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/09 02:41:25 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 19:23:58 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,28 +24,27 @@ int main(void)
 	scavKikou.attack("son pere");
 	std::cout << scavKikou << std::endl;
 	scavKikou.attack("son frere");
-	std::cout << scavKikou << std::endl;
 	scavKikou.takeDamage(7);
-	scavKikou.guardGate();
 	std::cout << scavKikou << std::endl;
+	scavKikou.guardGate();
 	scavKikou.beRepaired(3);
 	std::cout << scavKikou << std::endl;
 	scavKikou.attack("sa mere");
-	std::cout << scavKikou << std::endl;
 	scavKikou.attack("son pere");
-	std::cout << scavKikou << std::endl;
 	scavKikou.attack("son frere");
-	std::cout << scavKikou << std::endl;
 	scavKikou.attack("Tout le monde");
-	std::cout << scavKikou << std::endl;
 	scavKikou.attack("Tout le monde");
-	std::cout << scavKikou << std::endl;
 	scavKikou.attack("Tout le monde");
 	std::cout << scavKikou << std::endl;
 	scavKikou.attack("Tout le monde");
 	std::cout << scavKikou << std::endl;
 	scavKikou.takeDamage(10);
-	scavKikou.takeDamage(10);
+	scavKikou.takeDamage(100);
+	std::cout << scavKikou << std::endl;
+
+	ScavTrap	test("test", 666, 666, 666);
+	scavKikou = test;
+	std::cout << scavKikou << std::endl;
 
 	return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/10 13:41:48 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:39:55 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,29 +22,23 @@ int main(void)
 	std::cout << fragKikou << std::endl;
 	fragKikou.attack("son pere");
 	fragKikou.highFivesGuys();
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("son frere");
-	std::cout << fragKikou << std::endl;
 	fragKikou.takeDamage(7);
 	std::cout << fragKikou << std::endl;
 	fragKikou.beRepaired(3);
 	std::cout << fragKikou << std::endl;
 	fragKikou.attack("sa mere");
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("son pere");
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("son frere");
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("Tout le monde");
-	std::cout << fragKikou << std::endl;
 	fragKikou.attack("Tout le monde");
 	std::cout << fragKikou << std::endl;
 	fragKikou.attack("Tout le monde");
 	std::cout << fragKikou << std::endl;
 	fragKikou.takeDamage(10);
-	fragKikou.takeDamage(10);
+	fragKikou.takeDamage(100);
+	std::cout << fragKikou << std::endl;
 
 	return 0;
 }

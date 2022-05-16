@@ -6,7 +6,7 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/14 04:49:01 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/16 14:11:53 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ S		= srcs/
 O		= objs/
 I		= incs/
 
-NAME	= trap
+NAME	= zoo
 
-SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp
+SRCS	= main.cpp Cat.cpp Dog.cpp AAnimal.cpp Brain.cpp
 
 CC		= clang++
 

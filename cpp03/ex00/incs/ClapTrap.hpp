@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:11:50 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 18:55:31 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ public:
 	ClapTrap(void);
 	ClapTrap(std::string name);
 	ClapTrap(const ClapTrap &src);
+	ClapTrap(std::string name, int hp, int ep, int att);
 	~ClapTrap(void);
 
 	ClapTrap & operator=(const ClapTrap &src);

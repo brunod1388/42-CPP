@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/16 00:15:47 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/16 01:23:54 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-#include <string>
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
+
 #include <iostream>
-#include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class WrongAnimal {
 
+protected:
+	std::string type;
+	
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	WrongAnimal(void);
+	WrongAnimal(const WrongAnimal &src);
+	~WrongAnimal(void);
 
-	// ClapTrap & operator=(const ClapTrap &src);
+	WrongAnimal & operator=(const WrongAnimal &rhs);
 
-	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	void	makeSound(void) const;
+	std::string		getType(void) const;
 };
-
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
 
 #endif

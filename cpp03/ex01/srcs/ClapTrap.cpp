@@ -6,14 +6,17 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/06 02:22:53 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 00:28:11 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void):
-_name("Default clapTrap"), _hitPoint(10), _EnergyPoint(10), _attackDamage(0)
+	_name("Default clapTrap"),
+	_hitPoint(10),
+	_EnergyPoint(10),
+	_attackDamage(0)
 {
 	std::cout << "Default Constructor called" << std::endl;
 
@@ -21,14 +24,30 @@ _name("Default clapTrap"), _hitPoint(10), _EnergyPoint(10), _attackDamage(0)
 }
 
 ClapTrap::ClapTrap(std::string name):
-_name(name), _hitPoint(10), _EnergyPoint(10), _attackDamage(0)
+	_name(name),
+	_hitPoint(10),
+	_EnergyPoint(10),
+	_attackDamage(0)
+{
+	std::cout << "Constructor called : " << name << "created" << std::endl;
+	return;
+}
+
+ClapTrap::ClapTrap(std::string name, int hp, int ep, int att):
+	_name(name),
+	_hitPoint(hp),
+	_EnergyPoint(ep),
+	_attackDamage(att)
 {
 	std::cout << "Constructor called : " << name << "created" << std::endl;
 	return;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &src):
-_name(src._name), _hitPoint(src._hitPoint), _EnergyPoint(src._EnergyPoint), _attackDamage(src._attackDamage)
+	_name(src._name),
+	_hitPoint(src._hitPoint),
+	_EnergyPoint(src._EnergyPoint),
+	_attackDamage(src._attackDamage)
 {
 	std::cout << "Copy Constructor Called" << std::endl;
 
@@ -83,7 +102,7 @@ void		ClapTrap::setHP(const int hp)
 	this->_hitPoint = hp;
 }
 
-void		ClapTrap::setEnergie(const int energy)
+void		ClapTrap::setEnergy(const int energy)
 {
 	this->_EnergyPoint = energy;
 }

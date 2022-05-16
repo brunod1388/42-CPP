@@ -6,7 +6,7 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/14 04:49:01 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/16 00:11:27 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,9 @@ S		= srcs/
 O		= objs/
 I		= incs/
 
-NAME	= trap
+NAME	= 
 
-SRCS	= main.cpp ClapTrap.cpp FragTrap.cpp
+SRCS	= main.cpp 
 
 CC		= clang++
 

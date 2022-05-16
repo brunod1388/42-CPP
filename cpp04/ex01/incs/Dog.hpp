@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/16 00:15:47 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/16 02:16:15 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-#include <string>
-#include <iostream>
-#include "ClapTrap.hpp"
+#ifndef DOG_HPP
+# define DOG_HPP
 
-class FragTrap : public ClapTrap {
+#include <string>
+#include "Animal.hpp"
+#include "Brain.hpp"
+
+class Dog : public Animal {
+
+private:
+	Brain	*brain;
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	Dog(void);
+	Dog(const Dog &src);
+	~Dog(void);
 
-	// ClapTrap & operator=(const ClapTrap &src);
+	Dog & operator=(const Dog &rhs);
 
-	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	virtual void	makeSound(void) const;
+	
+	Brain			*getBrain(void) const;
 };
-
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
 
 #endif

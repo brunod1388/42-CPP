@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/16 00:15:47 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/16 01:37:35 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-#include <string>
-#include <iostream>
-#include "ClapTrap.hpp"
+#ifndef CAT_HPP
+# define CAT_HPP
 
-class FragTrap : public ClapTrap {
+#include <string>
+#include "Animal.hpp"
+
+class Cat : public Animal {
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	Cat(void);
+	Cat(const Cat &src);
+	~Cat(void);
 
-	// ClapTrap & operator=(const ClapTrap &src);
-
-	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	virtual void	makeSound(void) const;
 };
-
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
 
 #endif

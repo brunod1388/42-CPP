@@ -6,14 +6,15 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/09 02:31:29 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/15 19:23:38 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void):
-_name("Default ScavTrap"), _hitPoint(100), _EnergyPoint(50), _attackDamage(20), _keeperMode(false)
+	ClapTrap("Default ScavTrap", 100, 50, 20),
+	_keeperMode(false)
 {
 	std::cout << "Default ScavTrap Constructor called" << std::endl;
 
@@ -21,14 +22,22 @@ _name("Default ScavTrap"), _hitPoint(100), _EnergyPoint(50), _attackDamage(20), 
 }
 
 ScavTrap::ScavTrap(std::string name):
-_name(name), _hitPoint(100), _EnergyPoint(50), _attackDamage(20), _keeperMode(false)
+	ClapTrap(name, 100, 50, 20),
+	_keeperMode(false)
 {
 	std::cout << "ScavTrap Constructor called : " << name << "created" << std::endl;
 	return;
 }
 
+ScavTrap::ScavTrap(std::string name, int hp, int ep, int att):
+	ClapTrap(name, hp, ep, att)
+{
+	std::cout << "Constructor called : " << name << "created" << std::endl;
+	return;
+}
 ScavTrap::ScavTrap(const ClapTrap &src):
-_name(src.getName()), _hitPoint(src.getHP()), _EnergyPoint(src.getEnergy()), _attackDamage(src.getAttDmg()), _keeperMode(false)
+	ClapTrap(src.getName(), src.getHP(), src.getEnergy(), src.getAttDmg()),
+	_keeperMode(false)
 {
 	std::cout << "Copy ScavTrap Constructor Called" << std::endl;
 
@@ -50,20 +59,30 @@ bool	ScavTrap::getKeeperMode(void) const
 void		ScavTrap::attack(const std::string& target)
 {
 	this->_keeperMode = false;
-	if (this->_EnergyPoint && this->_hitPoint)
+	if (this->getEnergy() && this->getHP())
 	{
-		std::cout << "ScavTrap "<< this->_name << " attacks " << target;
-		std::cout << ", causing " << this->_attackDamage << " points of damage!" << std::endl;
-		this->_EnergyPoint--;
+		std::cout << "ScavTrap "<< this->getName() << " attacks " << target;
+		std::cout << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
+		this->setEnergy(this->getEnergy() - 1);
 	}
 	else
-		std::cout << "ClapTrap "<< this->_name << " has no Energy left" << std::endl;
+		std::cout << "ClapTrap "<< this->getName() << " has no Energy left" << std::endl;
 }
 
 void	ScavTrap::guardGate()
 {
 	this->_keeperMode = true;
 	std::cout << "ScavTrap is now on keeper mode" << std::endl;
+}
+
+ScavTrap & ScavTrap::operator=(const ScavTrap &src)
+{
+	this->_name = src._name;
+	this->_hitPoint = src._hitPoint;
+	this->_EnergyPoint = src._EnergyPoint;
+	this->_attackDamage = src._attackDamage;
+
+	return *this;
 }
 
 std::ostream & operator<<(std::ostream &os, const ScavTrap &rhs)

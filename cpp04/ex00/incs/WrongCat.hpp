@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/06 00:08:56 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/15 00:36:57 by brunodeoliv      ###   ########.fr       */
+/*   Created: 2022/05/16 00:15:47 by brunodeoliv       #+#    #+#             */
+/*   Updated: 2022/05/16 01:42:41 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
-#include <string>
-#include <iostream>
-#include "ClapTrap.hpp"
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-class FragTrap : public ClapTrap {
+#include <string>
+#include "WrongAnimal.hpp"
+
+class WrongCat: public WrongAnimal {
 
 public:
-	FragTrap(void);
-	FragTrap(std::string name);
-	FragTrap(const ClapTrap &src);
-	~FragTrap(void);
+	WrongCat(void);
+	WrongCat(const WrongCat &src);
+	~WrongCat(void);
 
-	// ClapTrap & operator=(const ClapTrap &src);
-
-	void		attack(const std::string& target);
-	void		highFivesGuys(void);
+	void	makeSound(void) const;
 };
-
-std::ostream & operator<<(std::ostream &os, const FragTrap &rhs);
 
 #endif
