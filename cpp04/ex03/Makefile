@@ -6,7 +6,7 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/17 02:16:45 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/17 13:41:30 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ I		= incs/
 
 NAME	= ff
 
-SRCS	= AMateria.cpp ICharacter.cpp IMateriaSource.cpp main.cpp
+SRCS	= AMateria.cpp Character.cpp Cure.cpp Ice.cpp MateriaSource.cpp main.cpp 
 
-CC		= clang++
+CC		= g++-11
 
 CFLAGS	+= -Wall -Wextra -Werror -std=c++98
 
@@ -57,6 +57,9 @@ fclean: clean
 		@$(RM) $(NAME)
 
 re: fclean all
+
+run:	$(NAME)
+		./$(NAME)
 
 test: $(NAME)
 	./$(NAME)

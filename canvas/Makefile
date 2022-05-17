@@ -6,7 +6,7 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/16 00:11:27 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/16 23:56:48 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME	=
 
 SRCS	= main.cpp 
 
-CC		= clang++
+CC		= g++
 
 CFLAGS	+= -Wall -Wextra -Werror -std=c++98
 

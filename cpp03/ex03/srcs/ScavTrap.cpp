@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 00:08:58 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/16 00:04:12 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 22:53:38 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void		ScavTrap::attack(const std::string& target)
 	this->_keeperMode = false;
 	if (this->getEnergy() && this->getHP())
 	{
-		std::cout << this->getName() << " attacks " << target;
+		std::cout << "Scav" << this->getName() << " attacks " << target;
 		std::cout << ", causing " << this->getAttDmg() << " points of damage!" << std::endl;
 		this->setEnergy(this->getEnergy() - 1);
 	}

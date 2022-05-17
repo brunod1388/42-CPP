@@ -38,3 +38,8 @@ Brain & Brain::operator=(const Brain &rhs)
 		this->ideas[i] = rhs.ideas[i];
 	return *this;
 }
+
+std::string	*Brain::getIdeas(void)
+{
+	return this->ideas;
+}

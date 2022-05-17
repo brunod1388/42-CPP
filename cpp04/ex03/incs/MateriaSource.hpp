@@ -2,13 +2,14 @@
 # define MATERIASOURCE_HPP
 
 #include <string>
+#include "IMateriaSource.hpp"
+#include "AMateria.hpp"
 
-class MateriaSource {
+class MateriaSource : public IMateriaSource{
 
 private:
-
-protected:
-
+	static const int	_nbMat = 4;
+	AMateria			*_materia[_nbMat];
 public:
 
 	MateriaSource(void);
@@ -16,7 +17,8 @@ public:
 	~MateriaSource(void);
 
 	MateriaSource & operator=(const MateriaSource &rhs);
-
+	virtual void learnMateria(AMateria *materia);
+	virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

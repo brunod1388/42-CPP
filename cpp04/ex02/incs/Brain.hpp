@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 00:15:47 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/16 14:15:09 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 23:42:15 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ public:
 	~Brain(void);
 
 	Brain & operator=(const Brain &rhs);
+	std::string	*getIdeas(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/06 01:01:16 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/16 13:52:35 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/16 22:47:12 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ int main(void)
 	DiamondTrap diamondKikou("diamondKikou");
 	DiamondTrap sp_copy(diamondKikou);
 
+	std::cout << default_sp << std::endl;
+	default_sp.whoAmI();
 	diamondKikou.attack("sa mere");
 	std::cout << diamondKikou << std::endl;
 	diamondKikou.attack("son pere");

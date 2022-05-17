@@ -6,13 +6,14 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 23:57:42 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/17 02:22:12 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/17 13:47:19 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
+#include "MateriaSource.hpp"
 
 int main()
 {
@@ -27,7 +28,8 @@ int main()
 	me->equip(tmp);
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
-
+	me->printMat();
+	
 	ICharacter* bob = new Character("bob");
 
 	me->use(0, *bob);
@@ -36,5 +38,6 @@ int main()
 	delete bob;
 	delete me;
 	delete src;
+	while (42);
 	return 0;
 }
