@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:51:33 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/18 20:53:41 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/18 23:59:47 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ bool Bureaucrat::verbose = false;
 
 Bureaucrat::Bureaucrat(void):
 	_name("Bob"),
-	_grade(100)
+	_grade(GRADE_DEFAULT)
 {
 	if (Bureaucrat::verbose)
 		std::cout << "Default constructor (" << *this << ")" << std::endl;
@@ -67,9 +67,9 @@ int	Bureaucrat::getGrade(void) const
 
 void	Bureaucrat::checkGrade(void) const
 {
-	if (this->_grade < Bureaucrat::_MaxGrade)
+	if (this->_grade < GRADE_MAX)
 		throw Bureaucrat::GradeTooHighException();
-	if (this->_grade > Bureaucrat::_MinGrade)
+	if (this->_grade > GRADE_MIN)
 		throw Bureaucrat::GradeTooLowException();
 }
 
@@ -77,16 +77,27 @@ void	Bureaucrat::increment(int n)
 {
 	this->_grade -= n;
 	checkGrade();
-	std::cout << this->_name << " has been upgraded by " << n << " grades." << std::endl; 
+	std::cout << this->_name << " has been upgraded by " << n << " grades." << std::endl;
 }
 
 void	Bureaucrat::decrement(int n)
 {
 	this->_grade += n;
 	checkGrade();
-	std::cout << this->_name << " has been downgraded by " << n << " grades." << std::endl; 
+	std::cout << this->_name << " has been downgraded by " << n << " grades." << std::endl;
 }
 
+bool	Bureaucrat::signForm(Form &f) const
+{
+	if (f.beSigned(*this))
+	{
+		std::cout << this->getName() << " signed " << f.getName() << " Form." << std::endl;
+		return true;
+	}
+	std::cout << this->getName() << "couldn't sign " << f.getName()
+		<< " because grade needed to sign is " << f.getGradeToSign()  << std::endl;
+	return false;
+}
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &rhs)
 {

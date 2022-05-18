@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:51:30 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/18 20:48:57 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/18 23:59:37 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <stdexcept>
 # include <iostream>
+# include "bureau.hpp"
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 
 private:
-	static const int	_MaxGrade = 1;
-	static const int	_MinGrade = 150;
 	const std::string	_name;
 	int					_grade;
 
@@ -29,7 +31,7 @@ private:
 public:
 
 	static bool	verbose;
-	
+
 	Bureaucrat(void);
 	Bureaucrat(std::string name, int grade);
 	Bureaucrat(const Bureaucrat &src);
@@ -40,8 +42,9 @@ public:
 	const std::string	&getName(void) const;
 	int					getGrade(void) const;
 
-	void				increment(int n = 1);
-	void				decrement(int n = 1);
+	void	increment(int n = 1);
+	void	decrement(int n = 1);
+	bool	signForm(Form &f) const;
 
 	class GradeTooHighException : public std::exception{
 	

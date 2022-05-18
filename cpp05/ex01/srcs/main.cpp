@@ -6,26 +6,46 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:51:28 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/18 20:52:27 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/19 00:06:55 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main(void)
 {
 	// Bureaucrat::verbose = true;
 	try
 	{
-		Bureaucrat	bur = Bureaucrat();
+		Form	f("fail", 100, 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "EXCEPETION : " << e.what() << std::endl;
+	}
 
-		bur.increment();
-		std::cout << bur << std::endl;
-		bur.decrement();
-		std::cout << bur << std::endl;
-		bur.increment(50);
-		std::cout << bur << std::endl;
-		bur.increment(50);
+	try
+	{
+		Form	f("fail", 0, 100);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "EXCEPETION : " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Form	f("fail", 1000, 1);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "EXCEPETION : " << e.what() << std::endl;
+	}
+
+	try
+	{
+		Form	f("fail", 1, 1000);
 	}
 	catch(const std::exception& e)
 	{
@@ -34,18 +54,18 @@ int main(void)
 
 	std::cout << std::endl;
 
-
 	try
 	{
-		Bureaucrat	bob("Kikou", 54);
+		Bureaucrat	kikou("Kikou", 54);
+		Bureaucrat	bob("bob", 120);
+		Form		form("42", 64, 90);
 
-		bob.increment();
 		std::cout << bob << std::endl;
-		bob.decrement();
-		std::cout << bob << std::endl;
-		bob.decrement(50);
-		std::cout << bob << std::endl;
-		bob.decrement(50);
+		std::cout << form << std::endl;
+		bob.signForm(form);
+		std::cout << kikou << std::endl;
+		std::cout << form << std::endl;
+		kikou.signForm(form);
 	}
 	catch(const std::exception& e)
 	{
