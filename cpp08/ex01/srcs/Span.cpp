@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:08:24 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/22 04:23:55 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/22 04:33:33 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Span::Span(void)
 	return ;
 }
 
-Span::Span(int n) : _size(n)
+Span::Span(size_t n) : _size(n)
 {
 	return ;
 }
@@ -38,22 +38,24 @@ Span & Span::operator=(const Span &rhs)
 {
 	this->_size = rhs._size;
 	if (!this->_content.empty())
-		this->_content.erase(this->_content.begin(), this->_content.end()); // pas sur que necessaire, a test...
+		this->_content.erase(this->_content.begin(), this->_content.end());
 	this->_content = rhs._content;
 	return *this;
 }
 
-int		Span::getSize(void)
+size_t	Span::getSize(void)
 {
 	return this->_size;
 }
 
 void	Span::addNumber(int n)
 {
+	if (this->_content.size() == this->_size)
+		throw std::overflow_error("Your Span is full");
 	this->_content.push_back(n);
 }
 
-int		Span::shortestSpan(void)
+int	Span::shortestSpan(void)
 {
 	std::vector<int>	l = this->_content;
 	int					min = INT_MAX;
@@ -68,7 +70,7 @@ int		Span::shortestSpan(void)
 	return min;
 }
 
-int		Span::longestSpan(void)
+int	Span::longestSpan(void)
 {
 	int	min = *std::min_element(this->_content.begin(), this->_content.end());
 	int	max = *std::max_element(this->_content.begin(), this->_content.end());
@@ -78,7 +80,7 @@ int		Span::longestSpan(void)
 
 void	Span::randomFill(int max)
 {
-	int n = this->_content.size();
+	size_t n = this->_content.size();
 	srand(time(0));
 	while (n++ < this->_size)
 		this->_content.push_back(rand() % max);

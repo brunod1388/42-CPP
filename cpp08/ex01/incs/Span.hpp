@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:08:27 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/22 04:17:12 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/22 04:32:29 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,20 +20,20 @@ class Span {
 
 private:
 
-	int					_size;
+	size_t				_size;
 	std::vector<int>	_content;
 
 	Span(void);
 
 public:
 
-	Span(int n);
+	Span(size_t n);
 	Span(const Span &src);
 	~Span(void);
 
 	Span & operator=(const Span &rhs);
 
-	int		getSize(void);
+	size_t	getSize(void);
 
 	void	addNumber(int n);
 	int		shortestSpan(void);
