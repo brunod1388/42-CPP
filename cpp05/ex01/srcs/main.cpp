@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 19:51:28 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/19 00:06:55 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/19 00:25:57 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int main(void)
 {
 	// Bureaucrat::verbose = true;
+	// Form::verbose = true;
 	try
 	{
 		Form	f("fail", 100, 0);

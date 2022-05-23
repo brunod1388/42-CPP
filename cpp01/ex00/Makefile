@@ -6,12 +6,12 @@
 #    By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 00:46:25 by bgoncalv          #+#    #+#              #
-#    Updated: 2022/05/01 03:28:10 by brunodeoliv      ###   ########.fr        #
+#    Updated: 2022/05/18 19:56:51 by brunodeoliv      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC			=	clang++
-CFLAGS		=	-Wall -Wextra -Werror
+CC			=	g++-11
+CFLAGS		=	-Wall -Wextra -Werror -std=c++98
 
 INCLUDES	=	Zombie.hpp
 

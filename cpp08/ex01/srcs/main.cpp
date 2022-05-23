@@ -6,7 +6,7 @@
 /*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 03:34:37 by brunodeoliv       #+#    #+#             */
-/*   Updated: 2022/05/22 04:33:43 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/05/22 04:37:58 by brunodeoliv      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,12 @@ int main ()
 	spRand.randomFill();
 	std::cout << "shortest span for " << spRand.getSize() << " elements : " << spRand.shortestSpan() << std::endl;
 	std::cout << "longest span for " << spRand.getSize() << " elements : " << spRand.longestSpan() << std::endl << std::endl;
+
+	spRand = Span(12345678);
+	spRand.randomFill();
+	std::cout << "shortest span for " << spRand.getSize() << " elements : " << spRand.shortestSpan() << std::endl;
+	std::cout << "longest span for " << spRand.getSize() << " elements : " << spRand.longestSpan() << std::endl << std::endl;
+
 
 	return 0;
 }
