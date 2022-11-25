@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: brunodeoliveira <brunodeoliveira@studen    +#+  +:+       +#+        */
+/*   By: bruno1388 <bruno1388@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/17 00:29:37 by bgoncalv          #+#    #+#             */
-/*   Updated: 2022/05/04 14:12:55 by brunodeoliv      ###   ########.fr       */
+/*   Updated: 2022/11/25 01:06:42 by bruno1388        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,109 +17,81 @@
 
 PhoneBook::PhoneBook(void)
 {
-	this->i0 = -1;
-	this->nb_contact = 0;
+	_i0 = -1;
+	_nb_contact = 0;
 }
 
 void	PhoneBook::add_contact(void)
 {
-	Contact *c;
-	std::string	input;
-	int	i;
+	std::string	input[5];
 
-	if (this->nb_contact < MAX_CONTACT)
-		i = this->nb_contact++;
-	else
-		i = ++this->i0 % MAX_CONTACT;
-	c = &this->book[i];
-	std::cout << "First name : ";
-	getline(std::cin, input);
-	c->set_first_name(input);
-	std::cout << "Last name  : ";
-	getline(std::cin, input);
-	c->set_last_name(input);
-	std::cout << "Nickname   : ";
-	getline(std::cin, input);
-	c->set_nickname(input);
-	std::cout << "Phone nbr  : ";
-	getline(std::cin, input);
-	c->set_phone_number(input);
-	std::cout << "Darkest secrets : ";
-	getline(std::cin, input);
-	c->set_darkest_secrets(input);
+	if (_nb_contact < MAX_CONTACT)
+		_nb_contact++;
+	std::cout << "First name : ";		std::cin >> input[0];
+	std::cout << "Last name  : ";		std::cin >> input[1];
+	std::cout << "Nickname   : ";		std::cin >> input[2];
+	std::cout << "Phone nbr  : ";		std::cin >> input[3];
+	std::cout << "Darkest secrets : ";	std::cin >> input[4];
+
+	_book[++_i0 % MAX_CONTACT] = Contact(input[0], input[1], input[2], input[3], input[4]);
 }
 
 void	PhoneBook::search_contact(void)
 {
 	int	i;
 
-	if (this->nb_contact < 1)
+	if (_nb_contact < 1)
 		return ;
 	display_contacts();
-	std::cout << "Enter desired contact : ";
-	std::cin >> i;
-	if (std::cin.fail() || i < 0 || this->nb_contact <= i)
+	std::cout << "Enter desired contact : ";	std::cin >> i;
+
+	if (std::cin.fail() || i < 0 || _nb_contact <= i)
 	{
 		std::cin.clear();
 		std::cin.ignore(1000, '\n');
-		std::cout << "Contact id must be 0 to " << this->nb_contact - 1 << std::endl;
+		std::cout << "Contact id must be 0 to " << _nb_contact - 1 << std::endl;
 	}
 	else
-		display_info(i);
+		std::cout << _book[i];
 }
 
 void	PhoneBook::display_contacts(void)
 {
 	Contact *c;
 
-	for (int i = 0; i < this->nb_contact; i++)
+	for (int i = 0; i < _nb_contact; i++)
 	{
-		c = &this->book[i];
+		c = &_book[i];
 		std::cout << std::setfill(' ') << i << " | ";
-		std::cout << std::setw(10) << c->get_first_name().substr(0, 10);
+		std::cout << std::setw(10) << c->get_first_name(10);
 		std::cout << " | ";
-		std::cout << std::setw(10) << c->get_last_name().substr(0, 10);
+		std::cout << std::setw(10) << c->get_last_name(10);
 		std::cout << " | ";
-		std::cout << std::setw(10) << c->get_nickname().substr(0, 10);
+		std::cout << std::setw(10) << c->get_nickname(10);
 		std::cout << " | " << std::endl;
 	}
 }
 
-void	PhoneBook::display_info(int id)
-{
-	Contact *c = &this->book[id % MAX_CONTACT];
-
-	std::cout << "First Name      : " << c->get_first_name() << std::endl;
-	std::cout << "Last Name       : " << c->get_last_name() << std::endl;
-	std::cout << "NickName        : " << c->get_nickname() << std::endl;
-	std::cout << "Phone number    : " << c->get_phone_number() << std::endl;
-	std::cout << "Darkest secrets : " << c->get_darkest_secrets() << std::endl;
-}
-
 void	PhoneBook::start(void)
 {
-	std::string	input;
+	std::string	input("");
 
 	std::cout << "############################################" << std::endl;
-	std::cout << "###                                      ###" << std::endl;
 	std::cout << "###             Welcome to my            ###" << std::endl;
-	std::cout << "###              Crappy Book             ###" << std::endl;
-	std::cout << "###                                      ###" << std::endl;
+	std::cout << "###              Crappy _book            ###" << std::endl;
 	std::cout << "############################################" << std::endl;
 	std::cout << std::endl;
-	input = "";
-	while (input.compare("EXIT"))
+
+	while (input != "EXIT")
 	{
 		std::cout << "Please enter a command, ADD, SEARCH or EXIT" << std::endl;
 		std::cout << std::endl;
-		getline(std::cin, input);
-		if (!input.compare("ADD"))
-			this->add_contact();
-		else if (!input.compare("SEARCH"))
-			this->search_contact();
-		else if (!input.compare(""))
-			this->search_contact();
-		else if (input.compare("EXIT"))
+		std::cin >> input;
+		if (input == "ADD")
+			add_contact();
+		else if (input == "SEARCH")
+			search_contact();
+		else if (input != "EXIT")
 			std::cout << "Command not available." << std::endl;
 	}
 }
