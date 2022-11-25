@@ -16,7 +16,6 @@ public:
 	void	add_contact(void);
 	void	search_contact(void);
 	void	display_contacts(void);
-	void	display_info(int id);
 	void	start(void);
 };
 

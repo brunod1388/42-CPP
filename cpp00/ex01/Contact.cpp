@@ -6,7 +6,7 @@
 /*   By: bruno1388 <bruno1388@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/16 23:46:05 by bgoncalv          #+#    #+#             */
-/*   Updated: 2022/11/25 01:04:48 by bruno1388        ###   ########.fr       */
+/*   Updated: 2022/11/25 01:10:16 by bruno1388        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ std::string	Contact::get_darkest_secrets(int size) const
 		return _darkest_secrets;
 	return _darkest_secrets.substr(0, size);
 }
-
 
 std::ostream& operator<<(std::ostream& os, const Contact& rhs)
 {
